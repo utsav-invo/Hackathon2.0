@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medicine Availability Tracker</title>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">Medicine Tracker</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="apply.html">Apply as Candidate</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <!-- Hero -->
+    <div class="hero">
+      <h1>Medicine Tracker</h1>
+      <p>Find nearby pharmacies & hospitals with medicine stock before you travel. </p>
+      
+      <!-- Search -->
+      <div class="search-container">
+        <div style="display: flex; gap: 12px;">
+          <input type="text" class="search-input" id="searchInput" placeholder="Enter Medicine You Need" />
+          <button class="search-btn" id="searchBtn">Search</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Results -->
+    <div id="resultsSection" style="display: none;">
+      <div class="results" id="resultsList"></div>
+    </div>
+
+    <!-- Loading -->
+    <div id="loadingSection" class="loading" style="display: none;">
+      🔍 Searching nearby pharmacies...
+    </div>
+
+    <!-- No Results -->
+    <div id="noResultsSection" class="no-results" style="display: none;">
+      No results found.".
+    </div>
+
+    <!-- Map -->
+    <div id="mapSection" style="display: none;">
+      <div id="map" class="map-container"></div>
+    </div>
+
+    <!-- How It Works -->
+    <div class="how-it-works">
+      <h2>How It Works</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-icon">🔍</div>
+          <h3>Search Medicine</h3>
+          <p>Enter the name of the medicine you need in the search bar above.</p>
+        </div>
+        <div class="step">
+          <div class="step-icon">📍</div>
+          <h3>Find Nearby Locations</h3>
+          <p>View pharmacies and hospitals with available stock near your location.</p>
+        </div>
+        <div class="step">
+          <div class="step-icon">🚀</div>
+          <h3>Get Directions</h3>
+          <p>Use the map to navigate to the facility and get your medicine quickly.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Key Features -->
+    <div class="key-features">
+      <h2>Key Features</h2>
+      <div class="features">
+        <div class="feature">
+          <div class="feature-icon">⚡</div>
+          <h3>Real-Time Updates</h3>
+          <p>Get live information on medicine availability to avoid unnecessary trips.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">🗺️</div>
+          <h3>Interactive Maps</h3>
+          <p>Visualize locations on an interactive map for easy navigation.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">📱</div>
+          <h3>Mobile Friendly</h3>
+          <p>Access the tracker on any device, anywhere, anytime.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">🔒</div>
+          <h3>Secure & Reliable</h3>
+          <p>Your data is protected with top-notch security measures.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Why Choose Us -->
+    <div class="why-choose-us">
+      <h2>Why Choose Us?</h2>
+      <div class="benefits">
+        <div class="benefit">
+          <div class="benefit-icon">💊</div>
+          <h3>Comprehensive Coverage</h3>
+          <p>We track availability across thousands of pharmacies and hospitals.</p>
+        </div>
+        <div class="benefit">
+          <div class="benefit-icon">⏱️</div>
+          <h3>Save Time</h3>
+          <p>Reduce waiting times by knowing exactly where to go.</p>
+        </div>
+        <div class="benefit">
+          <div class="benefit-icon">❤️</div>
+          <h3>Health Focused</h3>
+          <p>Dedicated to improving healthcare access for everyone.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <h3>Medicine Availability Tracker</h3>
+      <p>Empowering patients with real-time medicine availability information.</p>
+      <div class="footer-links">
+        <a href="about.html">About</a>
+        <a href="apply.html">Apply as Candidate</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Contact</a>
+      </div>
+      <p>&copy; 2023 Medicine Tracker. All rights reserved.</p>
+    </div>
+
+    <!-- Admin Section (Top Right) -->
+    <div class="admin-top-right" id="adminSection">
+      <a href="admin.html" class="admin-btn">🛠 Admin</a>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

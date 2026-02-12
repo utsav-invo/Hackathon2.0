@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login - Medicine Tracker</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">Medicine Tracker</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="apply.html">Apply as Candidate</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <!-- Admin Login Form -->
+    <div class="hero" style="text-align: center;">
+      <h1>Admin Login</h1>
+      <p>Access the admin dashboard to manage medicine inventory.</p>
+
+      <form id="adminLoginForm" style="max-width: 400px; margin: 0 auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); margin-top: 40px;">
+        <p style="margin-bottom: 20px; color: #6b7280;"><strong>Demo:</strong> admin@demo.com / admin123</p>
+        <input type="email" id="adminEmail" placeholder="Email" required style="width: 100%; padding: 12px; margin-bottom: 12px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 16px; box-sizing: border-box;" />
+        <input type="password" id="adminPass" placeholder="Password" required style="width: 100%; padding: 12px; margin-bottom: 20px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 16px; box-sizing: border-box;" />
+        <button type="submit" style="width: 100%; padding: 12px; background: #2563eb; color: white; border: none; border-radius: 8px; font-size: 16px; cursor: pointer; transition: background 0.3s;" onmouseover="this.style.background='#1d4ed8'" onmouseout="this.style.background='#2563eb'">
+          Login
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('adminLoginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const email = document.getElementById('adminEmail').value;
+      const pass = document.getElementById('adminPass').value;
+
+      if (email === 'admin@demo.com' && pass === 'admin123') {
+        alert('✅ Admin logged in!\n\nFull version: Update stock, add pharmacies, view analytics');
+        // Simulate admin redirect or show success
+        document.body.innerHTML += '<div style="position:fixed;top:20px;right:20px;background:#10b981;color:white;padding:16px;border-radius:12px;font-weight:600;">🛠️ Admin Mode Active</div>';
+      } else {
+        alert('❌ Invalid credentials');
+      }
+    });
+  </script>
+</body>
+</html>
